@@ -1,0 +1,28 @@
+/* Full-viewport, behind all content */
+#wf-bgvid {
+  position: fixed;
+  inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+  z-index: -1;             /* behind your site content */
+  pointer-events: none;    /* clicks pass through */
+  background: #000;        /* nice fallback if video stalls */
+}
+
+/* Make the video cover the viewport on all devices */
+#wf-bgvid-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Safer units for mobile browser UI bars */
+@supports (height: 100dvh) {
+  #wf-bgvid { height: 100dvh; }
+}
+
+/* Respect reduced motion: hide video if user prefers less motion */
+@media (prefers-reduced-motion: reduce) {
+  #wf-bgvid { display: none; }
+  html, body { background: #000; }
+}
