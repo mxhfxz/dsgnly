@@ -6,7 +6,8 @@
   "scripts": {
     "build": "terser src/site.js -o dist/site.min.js --compress --mangle",
     "build:forms": "terser src/forms.js -o dist/forms.min.js --compress --mangle",
-    "build:all": "npm run build && npm run build:forms",
+    "build:cycling-headline": "terser src/components/cycling-headline.js -o dist/components/cycling-headline.min.js --compress --mangle",
+    "build:all": "npm run build && npm run build:forms && npm run build:cycling-headline",
     "watch": "terser src/site.js -o dist/site.min.js --compress --mangle && echo 'Built. Rebuilding on changes...'"
   },
   "devDependencies": {
