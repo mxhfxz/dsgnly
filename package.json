@@ -1,0 +1,20 @@
+{
+  "name": "dsgnly",
+  "version": "1.0.0",
+  "description": "DSGNLY site interactions",
+  "main": "dist/site.min.js",
+  "scripts": {
+    "build": "terser src/site.js -o dist/site.min.js --compress --mangle",
+    "build:forms": "terser src/forms.js -o dist/forms.min.js --compress --mangle",
+    "build:all": "npm run build && npm run build:forms",
+    "watch": "terser src/site.js -o dist/site.min.js --compress --mangle && echo 'Built. Rebuilding on changes...'"
+  },
+  "devDependencies": {
+    "terser": "^5.36.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mxhfxz/dsgnly.git"
+  },
+  "license": "UNLICENSED"
+}
